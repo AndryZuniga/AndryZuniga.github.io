@@ -1,0 +1,65 @@
+body {
+    background: #0b8dd4;
+    color: #eb221e;
+    padding: 10px;
+    font-family: arial;
+}
+#all-contents {
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* navigation menu */
+nav {
+    background: rgb(239, 80, 41);
+    margin: 0 auto;
+    display: flex;
+    padding: 10px;
+}
+nav h1 {
+    display: flex;
+    align-items: center;
+    color: white;
+    flex: 1;
+    margin: 0;
+    padding: 10px;
+}
+nav ul {
+    list-style-image: none;
+    padding: 10px;
+}
+nav li {
+    display: inline-block;
+    padding: 5px;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+/* main container area beneath menu */
+main {
+    background: rgb(245, 238, 219);
+    display: flex;
+}
+.sidebar {
+    margin-right: 0px;
+    padding: 10px;
+}
+.sidebar img {
+    border-radius: 50px;
+    width : 350px;
+    height: 200px;
+}
+h2, h3 {
+    margin: 0px;
+    color: #fa0b02;
+}
+.Fav-Cars {
+    margin-right: 25px;
+}
+.FC-img{
+    border-radius: 25px;
+}
