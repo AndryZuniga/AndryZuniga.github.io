@@ -9,7 +9,7 @@
 		.box {
 			width: 300px;
 			height: 300px;
-			background-color: teal;
+			background-color: White;
 			font-size: 1000%;
 			text-align: center;
 			user-select: none;
@@ -18,6 +18,7 @@
 			top: 100px;
 			/* Change me! */
 			left: 0px;
+			border-radius: 500px;
 		}
 
 		.board {
@@ -31,7 +32,7 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-	
+		
 	<script>
 		(function () {
 			'use strict'
@@ -43,8 +44,8 @@
 
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
-			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-			var boardHeight = board.height();
+			var boardWidth = board.width() - 400;	// the maximum X-Coordinate of the screen
+			var boardHeight = board.height() + 500;
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -68,8 +69,8 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-			var positionX = 0;
-			var positionY = 0;
+			var positionX = 1000;
+			var positionY = 2000;
 			var points = 0;
 			var speedX = 50;
 			var speedY = 50;
@@ -87,12 +88,14 @@
 				positionY = positionY + speedY;
 
 				if (positionX > boardWidth){
+					speedX = 10 * points + 50;
+					speedY = 10 * points + 50;
 					speedX = -speedX;
 					points = points - 1;
 					changeBoxText(points);
 				}
 
-				else if(positionX <= 0){
+				else if(positionX <= 300){
 					speedX = -speedX;
 					speedY = -speedY;
 				}
@@ -101,7 +104,7 @@
 					speedY = -speedY;
 				}
 
-				else if(positionY <= 0){
+				else if(positionY <= 850){
 					speedY = -speedY;
 				}
 
@@ -115,7 +118,8 @@
 			*/
 			function handleBoxClick() {
 				points = points + 1;
-				speedX = 3 * points + 50;
+				speedX = 10 * points + 50;
+				speedY = 10 * points + 50;
 				speedX = -speedX;
 				changeBoxText(points);
 
@@ -126,7 +130,9 @@
 
 
 		})();
+	
 	</script>
+	<img src = "https://contents.mediadecathlon.com/p1957462/k$45cfc1c85b82150b2a752f0b57a4e083/outdoor-table-tennis-table-ppt-130-blue.jpg?format=auto&quality=40&f=800x800" width = 5000 height = 4000>
 </body>
 
 </html>
