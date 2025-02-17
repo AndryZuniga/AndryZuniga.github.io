@@ -7,10 +7,10 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 300px;
-			height: 300px;
+			width: 75px;
+			height: 75px;
 			background-color: White;
-			font-size: 1000%;
+			font-size: 250%;
 			text-align: center;
 			user-select: none;
 			display: block;
@@ -18,7 +18,7 @@
 			top: 100px;
 			/* Change me! */
 			left: 0px;
-			border-radius: 500px;
+			border-radius: 100px;
 		}
 
 		.board {
@@ -44,8 +44,8 @@
 
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
-			var boardWidth = board.width() - 400;	// the maximum X-Coordinate of the screen
-			var boardHeight = board.height() + 500;
+			var boardWidth = board.width() ;	// the maximum X-Coordinate of the screen
+			var boardHeight = board.height() ;
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -69,11 +69,11 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-			var positionX = 1000;
-			var positionY = 2000;
+			var positionX = 50;
+			var positionY = 50;
 			var points = 0;
-			var speedX = 50;
-			var speedY = 50;
+			var speedX = 10;
+			var speedY = 10;
 
 
 			/* 
@@ -87,27 +87,25 @@
 				positionX = positionX + speedX;
 				positionY = positionY + speedY;
 
-				if (positionX > boardWidth){
-					speedX = 10 * points + 50;
-					speedY = 10 * points + 50;
+				if (positionX >= boardWidth){
+					speedX = 3 * points + 5;
+					speedY = 3 * points + 5;
 					speedX = -speedX;
 					points = points - 1;
 					changeBoxText(points);
 				}
-
-				else if(positionX <= 300){
+				
+				if(positionX <= 0){
 					speedX = -speedX;
 					speedY = -speedY;
 				}
-
-				else if (positionY > boardHeight){
+				if (positionY >= boardHeight){
 					speedY = -speedY;
 				}
 
-				else if(positionY <= 850){
+				if(positionY <= 0){
 					speedY = -speedY;
 				}
-
 
 			};
 
@@ -118,8 +116,8 @@
 			*/
 			function handleBoxClick() {
 				points = points + 1;
-				speedX = 10 * points + 50;
-				speedY = 10 * points + 50;
+				speedX = 3 * points + 5;
+				speedY = 3 * points + 5;
 				speedX = -speedX;
 				changeBoxText(points);
 
@@ -132,7 +130,7 @@
 		})();
 	
 	</script>
-	<img src = "https://contents.mediadecathlon.com/p1957462/k$45cfc1c85b82150b2a752f0b57a4e083/outdoor-table-tennis-table-ppt-130-blue.jpg?format=auto&quality=40&f=800x800" width = 5000 height = 4000>
+	<img src = "https://www.shutterstock.com/shutterstock/videos/14597038/thumb/1.jpg" width = 1247 height = 559>
 </body>
 
 </html>
